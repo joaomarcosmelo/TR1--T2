@@ -12,5 +12,7 @@ Especificação do trabalho
 Simular o funcionamento da camada física por meio da implementação dos seguintes protocolos:
 
 Binário
+
 Manchester
+
 Bipolar
