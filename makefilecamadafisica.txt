@@ -1,0 +1,38 @@
+Nome do simulador:
+O projeto foi criado no VScode e compilado no wsl.
+Para compilar, basta rodar:
+→make
+Para executar:
+→make run
+Para limpar o diretório:
+→make clean
+
+#COMPILER
+CPP=g++
+
+# Nome do projeto
+SIM=simulador
+
+#FLAGS G++
+FLAGS= -c -Wall -pedantic
+
+all: $(SIM)
+
+$(SIM): simulador.o
+ camadafisicaprotocolo.o
+$(CPP) -o $@ $^
+
+simulador.o: simulador.cpp
+camadafisicaprotocolo.hpp
+$(CPP) -o $@ $< $(FLAGS)
+camadafisicaprotocolo.o: camadafisicaprotocolo.cpp 
+camadafisicaprotocolo.hpp
+$(CPP) -o $@ $< $(FLAGS)
+
+run:
+./$(SIM)
+
+clean:
+	rm -rf *.o $(SIM)	
+
+
